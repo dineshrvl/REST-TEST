@@ -16,7 +16,7 @@ jobs:
       deploy:
         steps:
         - checkout: self
-        - bash: "sudo su"
+        - bash: "who"
         - script: |
             echo $(Build.SourcesDirectory)
             ls $(Build.SourcesDirectory) *
