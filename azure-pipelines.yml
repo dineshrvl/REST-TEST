@@ -22,7 +22,7 @@ jobs:
             ls $(Build.SourcesDirectory) *
             cd 01-hello-world-rest-api
             sudo mvn clean install
-            docker run -p 8080:8080 dineshrvl/hello-world-rest-api:0.0.4-SNAPSHOT
-            docker login
-            docker push dineshrvl/hello-world-rest-api:0.0.4-SNAPSHOT
+            sudo docker run -p 8080:8080 dineshrvl/hello-world-rest-api:0.0.4-SNAPSHOT
+            sudo docker login
+            sudo docker push dineshrvl/hello-world-rest-api:0.0.4-SNAPSHOT
 
