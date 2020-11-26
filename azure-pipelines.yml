@@ -19,8 +19,3 @@ jobs:
         - script: |
             echo $(Build.SourcesDirectory)
             ls $(Build.SourcesDirectory) *
-        -  task: "Maven@3"
-           displayName: maven_project_profile
-           inputs:
-             mavenPomFile: '01-hello-world-rest-api/pom.xml'
-             goals: 'clean install'
