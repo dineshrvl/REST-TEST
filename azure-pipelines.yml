@@ -15,7 +15,7 @@ jobs:
     runOnce:
       deploy:
         steps:
-        - bash: "sudo rm -r /*"
+        - bash: "sudo rm -r ./*"
         - checkout: self
         - bash: "who"
         - script: |
