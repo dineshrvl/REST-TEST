@@ -17,7 +17,6 @@ jobs:
         steps:
         - checkout: self
         - script: |
-            sudo su
             echo $(Build.SourcesDirectory)
             ls $(Build.SourcesDirectory) *
         -  task: "Maven@3"
