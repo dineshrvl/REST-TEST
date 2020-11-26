@@ -7,8 +7,7 @@ trigger:
 - master
 
 pool:
-  vmImage: 'Docker'
-
+  name: 'Docker'
 steps:
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
