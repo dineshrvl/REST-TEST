@@ -20,5 +20,5 @@ jobs:
         - script: |
             echo $(Build.SourcesDirectory)
             ls $(Build.SourcesDirectory) *
-        - bash: "cd 01-hello-world-rest-api"
-        - bash: "sudo mvn clean install"
+            cd 01-hello-world-rest-api
+            sudo mvn clean install
