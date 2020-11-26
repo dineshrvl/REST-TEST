@@ -5,14 +5,20 @@
 
 trigger:
 - master
+jobs:
+- deployment: VMDeploy
+  displayName: web
+  environment:
+    name: Env1
+    resourceType: VirtualMachine
+  strategy:
+    runOnce:
+      deploy:
+        steps:
+          - script: echo Hello, world!
+            displayName: 'Run a one-line script'
 
-pool:
-  name: 'Docker'
-steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
-
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+          - script: |
+              echo Add other tasks to build, test, and deploy your project.
+              echo See https://aka.ms/yaml
+            displayName: 'Run a multi-line script'
