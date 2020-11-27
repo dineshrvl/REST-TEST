@@ -9,8 +9,9 @@ jobs:
 - deployment: VMDeploy
   displayName: web
   environment:
-    name: Env1
+    name: env
     resourceType: VirtualMachine
+    resourceName: vm-cicd
   strategy:
     runOnce:
       deploy:
