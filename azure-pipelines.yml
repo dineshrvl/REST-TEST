@@ -6,8 +6,11 @@
 trigger:
 - master
 jobs:
-- deployment: VMDeploy
-  displayName: web
+- job: Cleanup
+  workspace:
+    clean: all
+- deployment: Build Image
+  displayName: Staging
   environment:
     name: env
     resourceType: VirtualMachine
@@ -23,7 +26,6 @@ jobs:
             ls $(Build.SourcesDirectory) *
             cd 01-hello-world-rest-api
             sudo mvn clean install
-            sudo docker run -p 8080:8080 -d dineshrvl/hello-world-rest-api:0.0.4-SNAPSHOT
             sudo docker login
             sudo docker push dineshrvl/hello-world-rest-api:0.0.4-SNAPSHOT
 
