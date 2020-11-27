@@ -9,7 +9,7 @@ jobs:
 - job: Cleanup
   workspace:
     clean: all
-- deployment: Build Image
+- deployment: BuildImage
   displayName: Staging
   environment:
     name: env
