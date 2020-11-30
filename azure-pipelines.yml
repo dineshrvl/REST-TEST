@@ -27,7 +27,7 @@ jobs:
             sudo docker login
             sudo docker push dineshrvl/hello-world-rest-api:0.0.4-SNAPSHOT
         - script: |
-            sudo docker service create --name rest-api --replicas=5 dineshrvl/hello-world-rest-api:0.0.4-SNAPSHOT
+            sudo docker service update --image dineshrvl/hello-world-rest-api:0.0.4-SNAPSHOT
 
         
 
