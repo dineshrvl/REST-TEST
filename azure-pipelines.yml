@@ -26,4 +26,11 @@ jobs:
             sudo mvn clean install
             sudo docker login
             sudo docker push dineshrvl/hello-world-rest-api:0.0.4-SNAPSHOT
+        - task: Delay@1
+          inputs:
+              delayForMinutes: '1' 
+        - script: |
+            sudo docker service create --name rest-api --replicas=5 dineshrvl/hello-world-rest-api:0.0.4-SNAPSHOT
+
+        
 
